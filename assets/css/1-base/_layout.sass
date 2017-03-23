@@ -1,0 +1,95 @@
+// structure mixins
+
+=makeFlex($width: 100%,$direction: row,$justify: flex-start,$align: flex-start)
+  width: $width
+  display: flex
+  flex-direction: $direction
+  justify-content: $justify
+  align-items: $align
+
+=content-padding($padding: $page-content-padding)
+  padding: 0 $padding
+
+//  my grid system: 
+
+.r-section
+  +makeFlex(100%,row,flex-start ,center)
+  height: 60vh
+  background: #eee
+  color: white
+
+.u-section
+  @extend .r-section
+  align-items: space-around
+
+  .col
+    width: 100%
+
+[class*="col"]
+  margin: 0 $gap-cols
+  background: white
+  height: 80%
+  padding: $gap-cols
+  text-align: center
+
+[class*="col"]:last-child
+  margin-right: $gap
+  
+[class*="col"]:first-child
+  margin-left: $gap
+
+.flex-container
+  min-height: 200px
+
+[class^="half"]
+  width: 50% 
+  background: white
+
+[class^="one-3"]
+  width: 33% 
+
+[class^="one-10"]
+  width: 100%
+
+// section types
+
+.wide-section
+  background:
+    image: url("http:?")
+
+
+@media (max-width: $s_smartphone)
+  
+  .r-section
+    flex-direction: column
+    align-items: center
+    justify-content: center
+    padding: 0 20px
+    min-height: 60vh
+    height: max-content
+
+  [class *="col"]
+    margin: 10px 0px
+    background: white
+    min-height: 60px
+    height: max-content
+    padding: $gap-cols
+    text-align: center
+
+  [class *="col"]:last-child
+    margin-right: 0
+  
+  [class *="col"]:first-child
+    margin-left: 0
+
+  [class^="half"],
+  [class^="one-3"],
+  [class^="one-10"]
+    width: 100% 
+    background: white
+  
+  [class^="one-10"]
+    min-height: 100vh
+    height: max-content
+
+

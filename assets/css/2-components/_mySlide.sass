@@ -1,0 +1,107 @@
+/*
+  slide styles
+
+.slide
+  color: #555
+  width: 100%
+  height: 100vh
+  overflow: hidden
+  position: relative
+  z-index: 1
+
+  .slide-show
+    display: flex
+    width: 300vw
+    height: 100%
+    overflow: auto
+    position: absolute
+
+    .slide-item
+      +makeFlex(100%,row,space-between,center)
+      padding: 0 5vw
+
+      img
+        width: 90vw
+        height: 100%
+
+  .slide-text
+    +makeFlex(100%,row, center, center)
+    position: absolute
+    top: 0
+    left: 0
+    height: 100%
+    background: transparentize(#000,.5)
+    color: $light-color
+    padding-bottom: 25px 
+    font:
+      size: 30px
+
+    div
+      height: 90%
+
+    div:nth-child(1)
+      flex-direction: column
+      padding: 15% 50px 0 15%
+      align-items: flex-start
+
+
+  button
+    margin: 20px
+
+.slide-title
+  color: $light-color
+
+.slider-background
+  position: absolute
+  height: 100%
+  width: 100%
+  top: 0
+  left: 0
+  background-position: cover
+  filter: blur(5px)
+
+.slide-indicator
+  +makeFlex(100%,row , center,center)
+  position: absolute
+  bottom: 15px
+
+
+  .indicator-item
+    height: 5px
+    width: 70px
+    margin: 0 10px
+    background: transparentize(#aaa,.7)
+    border: dodgerblue
+    list-style: none
+  
+
+[rol="low-indicator"]
+  display: block
+  height: 100%
+  width: 1%
+  background: transparentize(#fff,.3)
+
+.blur-slide
+  filter: blur(3px)
+
+/* smartphone grid system
+@media (max-width: $s_smartphone)
+  .slide
+    color: #555
+    width: 100%
+    height: 60vh
+    overflow: hidden
+    position: relative
+    z-index: 1
+
+  
+  .slide-title
+    font-size: 20px
+
+  .indicator-item
+    height: 2px
+    width: 50px
+    margin: 0 10px
+    background: transparentize(#aaa,.7)
+    border: dodgerblue
+    list-style: none

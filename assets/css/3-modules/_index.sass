@@ -1,0 +1,79 @@
+/* post list behavior
+.sub-section
+  +content-padding()
+  width: 100%
+  position: relative
+  overflow: hidden
+  height: 412px
+  margin: 20px 0
+
+// pages patterns
+
+.post-article
+  padding-top: 50px
+
+  .post-info
+    color: #333
+    margin: 5px 0 30px 0
+
+  .post-author
+    font-weight: bolder
+
+
+.p-centered-content
+  +content-padding(100px)
+  margin: 20px 
+
+.stared-article
+  background: $accent-color
+  margin: 0 0
+ 
+  .sub-section-title
+    color: #fff
+    &::first-letter
+      color: $light-color
+  .text-card
+    display: flex
+    flex-direction: column
+    
+    .post-title
+      color: $light-color
+    p,
+    i
+      color: darken($light-color,5%)
+
+  .btn
+    align-self: flex-end
+
+/* smartphone grid system
+
+@media (max-width: $s_smartphone)
+  .sub-section
+    min-height: max-content
+    padding: 0 15px
+
+    button
+      position: static
+
+  .p-centered-content
+    +content-padding(10px)
+    margin: 20px
+
+  .stared-article
+    background: $accent-color
+    margin: 0 0
+ 
+    .sub-section-title
+      color: #fff
+      &::first-letter
+        color: $light-color
+    .text-card
+      display: flex
+      flex-direction: column
+
+      .post-title
+        color: $light-color
+      p,s
+      i
+        color: darken($light-color,5%)
+      

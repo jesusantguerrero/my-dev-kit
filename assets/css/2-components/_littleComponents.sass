@@ -1,0 +1,27 @@
+
+.separator-container
+  +makeFlex(100%,row , center,center)
+  height: 2px
+
+  div
+    height: 100%
+    background: $accent-color
+    width: 15%
+    padding: 0 $page-content-padding
+
+
+
+@media (max-width: $s_smartphone)
+
+  .separator-container
+    +makeFlex(100%,row , center,center)
+    height: 1px
+    padding: 0 10px
+  
+
+    div
+      width: 100%
+  
+
+
+
