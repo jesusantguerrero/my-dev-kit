@@ -10,57 +10,85 @@
 =content-padding($padding: $page-content-padding)
   padding: 0 $padding
 
-//  my grid system: 
+=col($num)
+  width: $num /10 * 100%
 
-.r-section
+=offset($offset)
+  margin-left: $offset
+
+//  my simple grid system: 
+
+.n-row
   +makeFlex(100%,row,flex-start ,center)
   height: 60vh
   background: #eee
   color: white
 
-.u-section
-  @extend .r-section
+.u-row
+  @extend .n-row
   align-items: space-around
 
-  .col
-    width: 100%
-
-[class*="col"]
+.half,.five,
+.three,
+.four,
+.six,
+.seven,
+.eight,
+.nine,
+.ten,
+.col
   margin: 0 $gap-cols
   background: white
   height: 80%
   padding: $gap-cols
   text-align: center
 
-[class*="col"]:last-child
-  margin-right: $gap
+  &:last-child
+    margin-right: $gap
   
-[class*="col"]:first-child
-  margin-left: $gap
+  &:first-child
+    margin-left: $gap
 
 .flex-container
   min-height: 200px
 
-[class^="half"]
+.half,
+.five
   width: 50% 
   background: white
 
-[class^="one-3"]
-  width: 33% 
+.two
+  +col(2)
+.three
+  +col(3) 
+.four
+  +col(4)
 
-[class^="one-10"]
-  width: 100%
+.six
+  +col(6)
+.seven
+  +col(7)
+
+.eight
+  +col(8)
+
+.nine
+  +col(9)
+
+.ten,.col
+  +col(10)
 
 // section types
 
 .wide-section
   background:
-    image: url("http:?")
 
+.my-proof
+  +offset(33%)
 
 @media (max-width: $s_smartphone)
   
-  .r-section
+  .n-row
     flex-direction: column
     align-items: center
     justify-content: center
@@ -68,28 +96,27 @@
     min-height: 60vh
     height: max-content
 
-  [class *="col"]
+  .half,.five,
+  .three,
+  .four,
+  .six,
+  .seven,
+  .eight,
+  .nine,
+  .ten,
+  .col
     margin: 10px 0px
     background: white
     min-height: 60px
     height: max-content
     padding: $gap-cols
     text-align: center
+    width: 100%
 
-  [class *="col"]:last-child
-    margin-right: 0
+    &:last-child
+      margin-right: 0
   
-  [class *="col"]:first-child
-    margin-left: 0
-
-  [class^="half"],
-  [class^="one-3"],
-  [class^="one-10"]
-    width: 100% 
-    background: white
-  
-  [class^="one-10"]
-    min-height: 100vh
-    height: max-content
+    &:first-child
+      margin-left: 0
 
 
